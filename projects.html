@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Michelle Gong</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="header">
+      projects
+      <div class="navigation">
+        <ul>
+          <li><a href="/index">home</a></li>
+          <li><a href="/about">about</a></li>
+          <li><a href="https://github.com/michelle-gong">github</a></li>
+          <li><a href="mailto:hello@michellegong.com">email me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="strawberry">
+      <img src="strawberry.png">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="stock.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("body").css("display", "none");
+
+        $("body").fadeIn(2000);
+
+        $("a.transition").click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(1000, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+    </script>
+  </body>
+</html>
