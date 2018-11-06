@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Michelle Gong</title>
+    <title>michelle gong</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="main">
       <div class="border"></div>
-      <img class="profile" src="">
+      <img class="profile" src="meme.png">
       <div class="text">
         <p>hello! thanks for stopping by :)</p>
         <p>--------------------------------------<br><br><br></p>
@@ -18,9 +19,42 @@
         <p>about: <a href="about.html">me</a></p>
         <p>my work: <a href="projects.html">projects</a> <a href="https://github.com/michelle-gong">github</a></p>
         <p>contact me: michelle.gong@uwaterloo.ca</p>
-        <p>play space invaders: <a href="projects.html">click</a></p>
+        <div class="spacelink" id="game"><p>play space invaders: <a href="space_invaders/game.html">click</a></p></div>
+      </div>
+    </div>
+    <div class="mainmobile">
+      <img class="profilemobile" src="mine.png">
+      <div class="mobileheader">
+        <h1>hi! i'm michelle</h1>
+        <p>thanks for dropping by!</p>
+      </div>
+      <div class="icon">
+        <img src="">
+        <p>projects</p>
+      </div>
+      <div class="icon">
+        <img src="">
+        <p>github</p>
+      </div>
+      <div class="icon">
+        <img src="">
+        <p>email me</p>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">$(document).ready(function() {
+
+    //preload
+    $('<img/>').hide().attr('src', 'mine.png').load(function(){
+        $('body').append($(this));
+    });
+
+    $('#game').hover(function() {
+        $('body').css('background-image', 'url("mine.png")');
+    }, function() {
+        $('body').css('background', '');
+    });
+});
+</script>
   </body>
 </html>

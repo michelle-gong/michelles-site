@@ -1,0 +1,68 @@
+body{
+  background: #000;
+}
+
+#background {
+  background-color: #0b092e;
+  height: 500px;
+  width: 750px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -300px;
+  margin-left: -375px;
+}
+
+#hero {
+  background-image: url("hero-kun.png");
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 425px;
+  left: 350px;
+}
+
+#missiles {
+  position: absolute;
+  height: 500px;
+  width: 750px;
+}
+
+#tomatoes {
+  position: absolute;
+  height: 500px;
+  width: 750px;
+}
+
+.missile {
+  position: absolute;
+  background-image: url("missile.png");
+  height: 10px;
+  width: 10px;
+}
+
+.tomato {
+  background-image: url("tomato-san.png");
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+#alert {
+  position: absolute;
+  top: 150px;
+  left: 155px;
+  font-family: 'Space Mono', monospace;
+  font-size: 64px;
+  letter-spacing: 10px;
+  color: red;
+}
+
+#score {
+  position: absolute;
+  top: 475px;
+  left: 625px;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  color: red;
+}
