@@ -9,14 +9,14 @@
     <!-- core bootstrap css -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat:100,200,300" rel="stylesheet">
     <!-- core bootstrap javascript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!-- headers -->
     <div class="header">
-      projects
+      <p id="expandable">my <img id="heart" src="images/julie.png"> work</p>
       <!-- navigation -->
       <div class="navigation">
         <ul>
@@ -34,10 +34,10 @@
     <!-- main container -->
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-8">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/largeref.png">
             <div class="title">
               <h1>an example</h1>
               <p>write description here!</p>
@@ -48,7 +48,7 @@
         <div class="col-sm-4">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/smallref.png">
             <div class="title">
               <h1>title</h1>
               <p>write description here!</p>
@@ -59,7 +59,18 @@
         <div class="col-sm-4">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/smallref.png">
+            <div class="title">
+              <h1>title</h1>
+              <p>write description here!</p>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="item">
+            <a href="#">
+            <img class="image" src="images/largeref.png">
             <div class="title">
               <h1>title</h1>
               <p>write description here!</p>
@@ -70,7 +81,7 @@
         <div class="col-sm-4">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/smallref.png">
             <div class="title">
               <h1>title</h1>
               <p>write description here!</p>
@@ -81,7 +92,7 @@
         <div class="col-sm-4">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/smallref.png">
             <div class="title">
               <h1>title</h1>
               <p>write description here!</p>
@@ -92,40 +103,7 @@
         <div class="col-sm-4">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/stock.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/stock.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/stock.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/stock.png">
+            <img class="image" src="images/smallref.png">
             <div class="title">
               <h1>title</h1>
               <p>write description here!</p>
@@ -143,6 +121,19 @@
     <!-- core bootstrap javascript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- fadein -->
-    <script src="js/pagefade.js"></script>
+    <!-- <script src="js/pagefade.js"></script>-->
+    <script>
+    $(function() {
+
+  $(window).scroll(function() {
+
+    var mass = Math.max(0, 5-0.01*$(this).scrollTop()) + 'vw';
+    var weight = Math.max(0, 4-0.01*$(this).scrollTop()) + 'vh';
+
+    $('#expandable').css({'font-size': mass, 'line-height': mass});
+    $('#heart').css({'width': weight});
+  });
+});
+</script>
   </body>
 </html>
