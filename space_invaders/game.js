@@ -1,4 +1,4 @@
-var hero = {
+var player = {
   top: 425,
   left: 350
 };
@@ -6,36 +6,6 @@ var hero = {
 var missiles = [];
 
 var enemyMissiles = [];
-
-var initializeTomatoes = [
-  { left: 150, top: -150 },
-  { left: 200, top: -150 },
-  { left: 250, top: -150 },
-  { left: 300, top: -150 },
-  { left: 350, top: -150 },
-  { left: 400, top: -150 },
-  { left: 450, top: -150 },
-  { left: 500, top: -150 },
-  { left: 550, top: -150 },
-  { left: 150, top: -100 },
-  { left: 200, top: -100 },
-  { left: 250, top: -100 },
-  { left: 300, top: -100 },
-  { left: 350, top: -100 },
-  { left: 400, top: -100 },
-  { left: 450, top: -100 },
-  { left: 500, top: -100 },
-  { left: 550, top: -100 },
-  { left: 150, top: -50 },
-  { left: 200, top: -50 },
-  { left: 250, top: -50 },
-  { left: 300, top: -50 },
-  { left: 350, top: -50 },
-  { left: 400, top: -50 },
-  { left: 450, top: -50 },
-  { left: 500, top: -50 },
-  { left: 550, top: -50 },
-];
 
 var tomatoes = [
   { left: 150, top: -150 },
@@ -67,7 +37,7 @@ var tomatoes = [
   { left: 550, top: -50 },
 ];
 
-var persimmons = [
+var tomatoes2 = [
   { left: 150, top: -150 },
   { left: 200, top: -150 },
   { left: 250, top: -150 },
@@ -97,7 +67,97 @@ var persimmons = [
   { left: 550, top: -50 },
 ];
 
-var turnips = [
+var persimmons1 = [
+  { left: 150, top: -150 },
+  { left: 200, top: -150 },
+  { left: 250, top: -150 },
+  { left: 300, top: -150 },
+  { left: 350, top: -150 },
+  { left: 400, top: -150 },
+  { left: 450, top: -150 },
+  { left: 500, top: -150 },
+  { left: 550, top: -150 },
+  { left: 150, top: -100 },
+  { left: 200, top: -100 },
+  { left: 250, top: -100 },
+  { left: 300, top: -100 },
+  { left: 350, top: -100 },
+  { left: 400, top: -100 },
+  { left: 450, top: -100 },
+  { left: 500, top: -100 },
+  { left: 550, top: -100 },
+  { left: 150, top: -50 },
+  { left: 200, top: -50 },
+  { left: 250, top: -50 },
+  { left: 300, top: -50 },
+  { left: 350, top: -50 },
+  { left: 400, top: -50 },
+  { left: 450, top: -50 },
+  { left: 500, top: -50 },
+  { left: 550, top: -50 },
+];
+
+var persimmons2 = [
+  { left: 150, top: -150 },
+  { left: 200, top: -150 },
+  { left: 250, top: -150 },
+  { left: 300, top: -150 },
+  { left: 350, top: -150 },
+  { left: 400, top: -150 },
+  { left: 450, top: -150 },
+  { left: 500, top: -150 },
+  { left: 550, top: -150 },
+  { left: 150, top: -100 },
+  { left: 200, top: -100 },
+  { left: 250, top: -100 },
+  { left: 300, top: -100 },
+  { left: 350, top: -100 },
+  { left: 400, top: -100 },
+  { left: 450, top: -100 },
+  { left: 500, top: -100 },
+  { left: 550, top: -100 },
+  { left: 150, top: -50 },
+  { left: 200, top: -50 },
+  { left: 250, top: -50 },
+  { left: 300, top: -50 },
+  { left: 350, top: -50 },
+  { left: 400, top: -50 },
+  { left: 450, top: -50 },
+  { left: 500, top: -50 },
+  { left: 550, top: -50 },
+];
+
+var turnips1 = [
+  { left: 150, top: -150 },
+  { left: 200, top: -150 },
+  { left: 250, top: -150 },
+  { left: 300, top: -150 },
+  { left: 350, top: -150 },
+  { left: 400, top: -150 },
+  { left: 450, top: -150 },
+  { left: 500, top: -150 },
+  { left: 550, top: -150 },
+  { left: 150, top: -100 },
+  { left: 200, top: -100 },
+  { left: 250, top: -100 },
+  { left: 300, top: -100 },
+  { left: 350, top: -100 },
+  { left: 400, top: -100 },
+  { left: 450, top: -100 },
+  { left: 500, top: -100 },
+  { left: 550, top: -100 },
+  { left: 150, top: -50 },
+  { left: 200, top: -50 },
+  { left: 250, top: -50 },
+  { left: 300, top: -50 },
+  { left: 350, top: -50 },
+  { left: 400, top: -50 },
+  { left: 450, top: -50 },
+  { left: 500, top: -50 },
+  { left: 550, top: -50 },
+];
+
+var turnips2 = [
   { left: 150, top: -150 },
   { left: 200, top: -150 },
   { left: 250, top: -150 },
@@ -147,37 +207,39 @@ var invaded = false;
 
 var missileSpeed = 10;
 
+var moveRight = true;
+
 document.onkeydown = function(e) {
   //on left key
   if (e.keyCode === 37 && hasBeenHit === false) {
       //move left
-      if (hero.left >= 30) {
-        hero.left = hero.left - 30;
-        document.getElementById('hero').innerHTML = "<img src='../images/hero-kun_left.png'>";
+      if (player.left >= 30) {
+        player.left = player.left - 30;
+        document.getElementById('player').innerHTML = "<img src='../images/hero-kun_left.png'>";
       }
   }
   //on right key
   if (e.keyCode === 39 && hasBeenHit === false) {
       //move right
-      if (hero.left <= 670) {
-        hero.left = hero.left + 30;
-        document.getElementById('hero').innerHTML = "<img src='../images/hero-kun_right.png'>";
+      if (player.left <= 670) {
+        player.left = player.left + 30;
+        document.getElementById('player').innerHTML = "<img src='../images/hero-kun_right.png'>";
       }
   }
   //on space
   if (e.keyCode === 32 && hasBeenHit === false && invaded === false) {
       // fire missile
       missiles.push({
-          top: hero.top - 5,
-          left: hero.left + 20
+          top: player.top - 5,
+          left: player.left + 20
       });
       drawMissile()
   }
-  moveHero();
+  moveplayer();
 }
 
-function moveHero() {
-  document.getElementById('hero').style.left = hero.left + "px";
+function moveplayer() {
+  document.getElementById('player').style.left = player.left + "px";
 }
 
 function drawMissile() {
@@ -207,16 +269,16 @@ function detectMissileOffScreen() {
 function drawTomatoes() {
   document.getElementById('tomatoes').innerHTML = ""
   for(var i = 0 ; i < tomatoes.length ; i++ ) {
-    if (waveCounter === 1) {
+    if (waveCounter === 1 || waveCounter === 2) {
       document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/tomato-san.png'></div>`;
     }
-    if (waveCounter === 2) {
+    if (waveCounter === 3 || waveCounter === 4) {
       document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/persimmon-senpai.png'></div>`;
     }
-    if (waveCounter === 3) {
+    if (waveCounter === 5 || waveCounter === 6) {
       document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/turnip-chan.png'></div>`;
     }
-    if (waveCounter === 4) {
+    if (waveCounter === 7) {
       document.getElementById('tomatoes').innerHTML += `<div class='ella' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/ella.png'></div>`;
     }
   }
@@ -224,7 +286,9 @@ function drawTomatoes() {
 
 function moveTomatoes() {
   for(var i = 0 ; i < tomatoes.length ; i++ ) {
-    tomatoes[i].top = tomatoes[i].top + tomatoSpeed;
+    if (moveRight === true) {
+      tomatoes[i].top = tomatoes[i].top + tomatoSpeed;
+    }
   }
 }
 
@@ -239,7 +303,7 @@ function detectTomatoOffScreen() {
 function detectCollision() {
   for(var aTomato = 0 ; aTomato < tomatoes.length ; aTomato++ ) {
     for(var aMissile = 0 ; aMissile < missiles.length ; aMissile++ ) {
-      if (waveCounter < 4) {
+      if (waveCounter < 7) {
         if (
           missiles[aMissile].left >= tomatoes[aTomato].left  &&
           missiles[aMissile].left <= (tomatoes[aTomato].left + 50)  &&
@@ -250,7 +314,7 @@ function detectCollision() {
           missiles.splice(aMissile, 1);
           scoreCounter++
         }
-      } else if (waveCounter === 4){
+      } else if (waveCounter === 7){
         if (
           missiles[aMissile].left >= tomatoes[aTomato].left  &&
           missiles[aMissile].left <= (tomatoes[aTomato].left + 450)  &&
@@ -288,13 +352,13 @@ function printScore() {
 function detectInvasion() {
   for(var i = 0 ; i < tomatoes.length ; i++ ) {
     if (
-      tomatoes[i].top >= (hero.top - 50) &&
+      tomatoes[i].top >= (player.top - 50) &&
       exploded >= 1
     ) {
       invaded = true;
       document.getElementById('alert').innerHTML = "INVADED AND EXPLODED! :( </br> <a href='../index.html'>go back home</a> </br> <a href='game.html'>play again</a>";
     } else if (
-      tomatoes[i].top >= (hero.top - 50) &&
+      tomatoes[i].top >= (player.top - 50) &&
       exploded === 0
     ) {
       invaded = true;
@@ -307,7 +371,7 @@ function makeEnemyMissile() {
   for (var i = 0 ; i < tomatoes.length ; i++ ) {
     if ((100 * Math.random()) > shootProbability) {
       console.log('a tomato shot you! :(')
-      if (waveCounter === 4) {
+      if (waveCounter === 7) {
         enemyMissiles.push ({
           top: tomatoes[i].top + 350,
           left: tomatoes[i].left + (450 * Math.random())
@@ -324,7 +388,11 @@ function makeEnemyMissile() {
 
 function moveEnemyMissile() {
   for(var i = 0 ; i < enemyMissiles.length ; i++ ) {
-    enemyMissiles[i].top = enemyMissiles[i].top + 5;
+    if (waveCounter === 7) {
+      enemyMissiles[i].top = enemyMissiles[i].top + 20;
+    } else {
+      enemyMissiles[i].top = enemyMissiles[i].top + 5;
+    }
   }
 }
 
@@ -346,15 +414,15 @@ function detectEnemyMissileOffScreen() {
 function detectDamage() {
   for(var i = 0 ; i < enemyMissiles.length ; i++ ) {
     if (
-      enemyMissiles[i].left >= hero.left  &&
-      enemyMissiles[i].left <= hero.left + 50  &&
-      enemyMissiles[i].top <= hero.top + 50  &&
-      enemyMissiles[i].top >= hero.top
+      enemyMissiles[i].left >= player.left  &&
+      enemyMissiles[i].left <= player.left + 50  &&
+      enemyMissiles[i].top <= player.top + 50  &&
+      enemyMissiles[i].top >= player.top
     ) {
       console.log("ohno!!!");
       exploded++;
       hasBeenHit = true;
-      document.getElementById('hero').innerHTML = "";
+      document.getElementById('player').innerHTML = "";
       document.getElementById('alert').innerHTML = "YOUR SHIP EXPLODED :( </br> <a href='../index.html'>go back home</a> </br> <a href='game.html'>play again</a>";
     }
   }
@@ -362,24 +430,36 @@ function detectDamage() {
 
 function addWave() {
   if (tomatoes.length === 0 && waveCounter === 1) {
-    tomatoes = persimmons;
+    tomatoes = tomatoes2;
+    tomatoSpeed++;
+    waveCounter++;
+  } else if (tomatoes.length === 0 && waveCounter === 2) {
+    tomatoes = persimmons1;
     tomatoSpeed++;
     waveCounter++;
     shootProbability = 99.93;
     missileSpeed = 15;
-  } else if (tomatoes.length === 0 && waveCounter === 2) {
+  } else if (tomatoes.length === 0 && waveCounter === 3) {
     console.log ('it worked!')
-    tomatoes = turnips;
+    tomatoes = persimmons2;
+    tomatoSpeed++;
+    waveCounter++;
+  } else if (tomatoes.length === 0 && waveCounter === 4) {
+    tomatoes = turnips1;
     tomatoSpeed++;
     waveCounter++;
     shootProbability = 99.92;
     missileSpeed = 20;
-  } else if (tomatoes.length === 0 && waveCounter === 3) {
+  } else if (tomatoes.length === 0 && waveCounter === 5) {
+    tomatoes = turnips2;
+    tomatoSpeed++;
+    waveCounter++;
+  } else if (tomatoes.length === 0 && waveCounter === 6) {
     console.log ('it worked!')
     tomatoes = ella;
     tomatoSpeed = 0.5;
     waveCounter++;
-    shootProbability = 80;
+    shootProbability = 75;
     missileSpeed = 25;
   }
 }

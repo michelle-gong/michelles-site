@@ -5,16 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Michelle Gong</title>
+    <!-- the favicon is a heart because i love you -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="main">
-      <div class="border"></div>
-      <div class="about">
-        <p>please go back
-        </p>
-      </div>
+    <div class="about">
+      <p>wo so woo</p>
+    </div>
+    <!-- lights -->
+    <div id="lights">
+
+    </div>
+    <div class="credits">
+      <p>[ ]  { }  &lt; /&gt;  with  &lt;3  by michelle gong in snowy waterloo, ontario</p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    var lights = [
+      { left: (Math.random() * $(window).width()), top: (Math.random() * $(window).height()) },
+      { left: (Math.random() * $(window).width()), top: (Math.random() * $(window).height()) },
+      { left: (Math.random() * $(window).width()), top: (Math.random() * $(window).height()) },
+      { left: (Math.random() * $(window).width()), top: (Math.random() * $(window).height()) },
+      { left: (Math.random() * $(window).width()), top: (Math.random() * $(window).height()) },
+
+      { left: (Math.random() * $(window).width()), top: ((Math.random() * ($(window).height() / 2)) + ($(window).height() / 2)) },
+      { left: (Math.random() * $(window).width()), top: ((Math.random() * ($(window).height() / 2)) + ($(window).height() / 2)) },
+      { left: (Math.random() * $(window).width()), top: ((Math.random() * ($(window).height() / 2)) + ($(window).height() / 2)) },
+      { left: (Math.random() * $(window).width()), top: ((Math.random() * ($(window).height() / 2)) + ($(window).height() / 2)) },
+      { left: (Math.random() * $(window).width()), top: ((Math.random() * ($(window).height() / 2)) + ($(window).height() / 2)) },
+
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+      { left: ((Math.random() * ($(window).width() / 2)) + ($(window).width() / 2)), top: ((Math.random() * ($(window).height() / 4)) + (2 * ($(window).height()) / 4))},
+    ];
+
+    function drawLights() {
+      document.getElementById('lights').innerHTML = ""
+      for(var i = 0 ; i < lights.length ; i++ ) {
+        document.getElementById('lights').innerHTML += `<div class='light' style='top:${lights[i].top}px; left:${lights[i].left}px; opacity: 0.6;'></div>`;
+      }
+    }
+
+    drawLights()
+
+    var x;
+    var y;
+
+    $(document).mousemove(function (e) {
+      x = e.pageX * -0.01;
+      y = e.pageY * -0.01;
+      $('#lights').css({'left': x, 'top': y});
+      $('.about').css({'left': (($(window).width() / 3) + (x * 10)), 'top': (($(window).height() / 3) + (y * 10))});
+    });
+    </script>
   </body>
 </html>

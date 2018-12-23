@@ -5,108 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Michelle Gong</title>
+    <!-- the favicon is a heart because i love you -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <!-- core bootstrap css -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat:100,200,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat:100,200,300,500,600,700,800" rel="stylesheet">
     <!-- core bootstrap javascript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <!-- headers -->
-    <div class="header">
-      <p id="expandable">my <img id="heart" src="images/julie.png"> work</p>
-      <!-- navigation -->
-      <div class="navigation">
+    <!-- sticky berry -->
+    <div id="links" class="strawberry">
+      <img src="images/strawberry.png" style="float:left; margin-left: 15vw;">
         <ul>
           <li><a href="index.html">home</a></li>
-          <li><a href="about.html">about</a></li>
+          <li><a href="game.html">play</a></li>
           <li><a href="https://github.com/michelle-gong">github</a></li>
           <li><a href="mailto:hello@michellegong.com">email me</a></li>
         </ul>
-      </div>
     </div>
-    <!-- sticky berry -->
-    <div class="strawberry">
-      <img src="images/strawberry.png">
+    <!-- headers -->
+    <div class="header">
+      <h1><span class="underline--magical">my portfolio</span> <img id="heart" src="images/julie.png"></h1>
+      <p>i build <span class="underline--magical">joy</span>. most projects are linked to github,</p>
+      <p>some special ones have their own writeups.</p>
+    </div>
+    <!-- navigation -->
+    <div id="links" class="navlinks in-view2">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="game.html">play</a></li>
+        <li><a href="https://github.com/michelle-gong">github</a></li>
+        <li><a href="mailto:hello@michellegong.com">email me</a></li>
+      </ul>
     </div>
     <!-- main container -->
     <div class="container">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/largeref.png">
+            <img class="image" src="images/naomi.png">
             <div class="title">
-              <h1>an example</h1>
-              <p>write description here!</p>
+              <h1>naomi</h1>
+              <p>a christmas gift for my niece. hide-and-seek written in unity3D using C#.</p>
             </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/smallref.png">
+            <img class="image" src="images/powerwasher3d.png">
             <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
+              <h1>Plant Pets</h1>
+              <p>plant app that gently reminds you to water and feed your plant friends. made for iOS using swift.</p>
             </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/smallref.png">
+            <img class="image" src="images/powerwasher3d.png" style="margin-top:-70%;">
             <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
+              <h1>power washer 3D</h1>
+              <p>work in progress. clean your room! made in unity3D using C#.</p>
             </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <div class="item">
             <a href="#">
-            <img class="image" src="images/largeref.png">
+            <img class="image" src="images/naomi.png">
             <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/smallref.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/smallref.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="item">
-            <a href="#">
-            <img class="image" src="images/smallref.png">
-            <div class="title">
-              <h1>title</h1>
-              <p>write description here!</p>
+              <h1>misc art projects</h1>
+              <p>i like to make these in my free time (+miloShirt)</p>
             </div>
             </a>
           </div>
@@ -115,6 +91,7 @@
     </div>
     <!-- footer -->
     <div class="footer">
+      <p>[ ]  { }  &lt; /&gt;  w  &lt;3  by michelle gong in snowy waterloo, ontario</p>
     </div>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -123,17 +100,91 @@
     <!-- fadein -->
     <!-- <script src="js/pagefade.js"></script>-->
     <script>
-    $(function() {
 
-  $(window).scroll(function() {
+      $(function() {
 
-    var mass = Math.max(0, 5-0.01*$(this).scrollTop()) + 'vw';
-    var weight = Math.max(0, 4-0.01*$(this).scrollTop()) + 'vh';
+    $(window).scroll(function() {
 
-    $('#expandable').css({'font-size': mass, 'line-height': mass});
-    $('#heart').css({'width': weight});
+      var mass = Math.max(1.2, 1.2-0.005*$(this).scrollTop()) + 'vw';
+      var weight = Math.max(10, 10-0.005*$(this).scrollTop()) + 'px';
+
+      $('#expandable').css({'font-size': mass, 'line-height': mass});
+      $('#heart').css({'width': weight});
+    });
+  });
+
+
+  $(document).ready(function(){
+  var scrollTop = 0;
+  $(window).scroll(function(){
+    scrollTop = $(window).scrollTop();
+
+    if (scrollTop >= 165) {
+      console.log('this is below!')
+      $('.strawberry').addClass('in-view');
+      $('.strawberry').removeClass('out-view');
+      $('.header').addClass('out-view');
+      $('.navlinks').addClass('out-view');
+      $('.navlinks').removeClass('in-view2');
+    } else if (scrollTop < 165) {
+      console.log('this is above!')
+      $('.strawberry').addClass('out-view');
+      $('.strawberry').removeClass('in-view');
+      $('.header').removeClass('out-view');
+      $('.navlinks').removeClass('out-view');
+      $('.navlinks').addClass('in-view2');
+    }
   });
 });
+
+// VARIABLES
+const magicalUnderlines = Array.from(document.querySelectorAll('.underline--magical'));
+
+const gradientAPI = 'https://gist.githubusercontent.com/wking-io/3e116c0e5675c8bcad8b5a6dc6ca5344/raw/4e783ce3ad0bcd98811c6531e40256b8feeb8fc8/gradient.json';
+
+// HELPER FUNCTIONS
+
+// 1. Get random number in range. Used to get random index from array.
+const randNumInRange = max => Math.floor(Math.random() * (max - 1));
+
+// 2. Merge two separate array values at the same index to
+// be the same value in new array.
+const mergeArrays = (arrOne, arrTwo) => arrOne
+  .map((item, i) => `${item} ${arrTwo[i]}`)
+  .join(', ');
+
+// 3. Curried function to add a background to array of elms
+const addBackground = (elms) => (color) => {
+  elms.forEach(el => {
+    el.style.backgroundImage = color;
+  });
+}
+// 4. Function to get data from API
+const getData = async(url) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.data;
+}
+
+// 5. Partial Application of addBackground to always apply
+// background to the magicalUnderlines constant
+const addBackgroundToUnderlines = addBackground(magicalUnderlines);
+
+// GRADIENT FUNCTIONS
+
+// 1. Build CSS formatted linear-gradient from API data
+const buildGradient = (obj) => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
+
+// 2. Get single gradient from data pulled in array and
+// apply single gradient to a callback function
+const applyGradient = async(url, callback) => {
+  const data = await getData(url);
+  const gradient = buildGradient(data[randNumInRange(data.length)]);
+  callback(gradient);
+}
+
+// RESULT
+applyGradient(gradientAPI, addBackgroundToUnderlines);
 </script>
   </body>
 </html>
