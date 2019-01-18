@@ -215,7 +215,7 @@ document.onkeydown = function(e) {
       //move left
       if (player.left >= 30) {
         player.left = player.left - 30;
-        document.getElementById('player').innerHTML = "<img src='../images/hero-kun_left.png'>";
+        document.getElementById('player').innerHTML = "<img src='assets/hero-kun_left.png'>";
       }
   }
   //on right key
@@ -223,7 +223,7 @@ document.onkeydown = function(e) {
       //move right
       if (player.left <= 670) {
         player.left = player.left + 30;
-        document.getElementById('player').innerHTML = "<img src='../images/hero-kun_right.png'>";
+        document.getElementById('player').innerHTML = "<img src='assets/hero-kun_right.png'>";
       }
   }
   //on space
@@ -270,16 +270,16 @@ function drawTomatoes() {
   document.getElementById('tomatoes').innerHTML = ""
   for(var i = 0 ; i < tomatoes.length ; i++ ) {
     if (waveCounter === 1 || waveCounter === 2) {
-      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/tomato-san.png'></div>`;
+      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='assets/tomato-san.png'></div>`;
     }
     if (waveCounter === 3 || waveCounter === 4) {
-      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/persimmon-senpai.png'></div>`;
+      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='assets/persimmon-senpai.png'></div>`;
     }
     if (waveCounter === 5 || waveCounter === 6) {
-      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/turnip-chan.png'></div>`;
+      document.getElementById('tomatoes').innerHTML += `<div class='tomato' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='assets/turnip-chan.png'></div>`;
     }
     if (waveCounter === 7) {
-      document.getElementById('tomatoes').innerHTML += `<div class='ella' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='../images/ella.png'></div>`;
+      document.getElementById('tomatoes').innerHTML += `<div class='ella' style='top:${tomatoes[i].top}px; left:${tomatoes[i].left}px;'><img src='assets/ella.png'></div>`;
     }
   }
 }
@@ -356,13 +356,13 @@ function detectInvasion() {
       exploded >= 1
     ) {
       invaded = true;
-      document.getElementById('alert').innerHTML = "INVADED AND EXPLODED! :( </br> <a href='../index.html'>go back home</a> </br> <a href='game.html'>play again</a>";
+      document.getElementById('alert').innerHTML = "YOU EXPLODED! :( </br> <a href='index.html'>play again</a>";
     } else if (
       tomatoes[i].top >= (player.top - 50) &&
       exploded === 0
     ) {
       invaded = true;
-      document.getElementById('alert').innerHTML = "YOU HAVE BEEN INVADED :( </br> <a href='../index.html'>go back home</a> </br> <a href='game.html'>play again</a>";
+      document.getElementById('alert').innerHTML = "YOU HAVE BEEN INVADED :( </br> <a href='index.html'>play again</a>";
     }
   }
 }
@@ -423,7 +423,7 @@ function detectDamage() {
       exploded++;
       hasBeenHit = true;
       document.getElementById('player').innerHTML = "";
-      document.getElementById('alert').innerHTML = "YOUR SHIP EXPLODED :( </br> <a href='../index.html'>go back home</a> </br> <a href='game.html'>play again</a>";
+      document.getElementById('alert').innerHTML = "YOUR SHIP EXPLODED :( </br>  <a href='index.html'>play again</a>";
     }
   }
 }

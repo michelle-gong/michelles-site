@@ -1,71 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Michelle Gong</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <div class="wrapper">
-    <div class="main">
-      <div class="border"></div>
-      <div class="profile"><p>me and my pineapple</p></div>
-      <div class="text">
-        <p>hello! thanks for stopping by :)</p>
-        <p>--------------------------------------<br><br><br></p>
-        <p>my name: michelle gong</p>
-        <p>about: <a href="about.html">me</a></p>
-        <p>my work: <a href="projects.html">portfolio</a> <a href="https://github.com/michelle-gong">github</a></p>
-        <p>contact me: michelle.gong@uwaterloo.ca</p>
-        <div class="spacelink" id="game"><p>play space invaders: <a href="space_invaders/game.html">click</a></p></div>
-      </div>
-    </div>
+<head>
+  <title>Michelle Gong</title>
+  <!-- i love you -->
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+</head>
+<body style="background: black;">
+    <div class="blackout"></div>
+    <div id="canvas">
+      <div id="tomatoes"></div>
+      <div id="missiles"></div>
+      <div id="player"><img src="assets/hero-kun_right.png"></div>
+      <div id="score"></div>
+      <div id="alert"></div>
     </div>
     <!-- credits -->
     <div class="credits">
-      <p>made  with  &lt;3  by michelle gong in snowy waterloo, ontario ツ</p>
+      <p>made  w  &lt;3  by michelle gong in snowy waterloo, ontario</a></p>
     </div>
-    <!-- mobile site -->
-    <div class="mainmobile">
-      <img class="profilemobile" src="mine.png">
-      <div class="mobileheader">
-        <h1>hi! i'm michelle</h1>
-        <p>thanks for dropping by!</p>
-      </div>
-      <div class="icon">
-        <img src="">
-        <p>projects</p>
-      </div>
-      <div class="icon">
-        <img src="">
-        <p>github</p>
-      </div>
-      <div class="icon">
-        <img src="">
-        <p>email me</p>
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-    //preload
-    $('<img/>').hide().attr('src', 'mine.png').load(function(){
-        $('body').append($(this));
-    });
-
-    $('#game').hover(function() {
-        $('body').css('background-image', 'url("images/stars.gif")');
-        $('#lights').css({'opacity': 0});
-    }, function() {
-        $('body').css('background', '');
-        $('#lights').css({'opacity': 1});
-    });
-});
-
-</script>
-  </body>
+  <script src="game.js"></script>
+</body>
 </html>
