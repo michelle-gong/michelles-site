@@ -238,6 +238,29 @@ document.onkeydown = function(e) {
   moveplayer();
 }
 
+//for mobile compatibility
+var p = $("#canvas");
+var offset = p.offset();
+
+document.getElementById('canvas').onclick = function(e) {
+  //if clicked
+  if ((e.pageX - offset.left - 15) >= 30 && (e.pageX - offset.left - 15) <= 670) {
+    // fire missile
+    missiles.push({
+        top: player.top - 5,
+        left: player.left + 20
+      });
+    drawMissile()
+    if ((e.pageX - offset.left - 15) >= player.left) {
+      document.getElementById('player').innerHTML = "<img src='assets/hero-kun_right.png'>";
+    } else {
+      document.getElementById('player').innerHTML = "<img src='assets/hero-kun_left.png'>";
+    }
+    player.left = (e.pageX - offset.left - 15);
+  }
+moveplayer();
+}
+
 function moveplayer() {
   document.getElementById('player').style.left = player.left + "px";
 }
