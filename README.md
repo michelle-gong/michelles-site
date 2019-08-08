@@ -1,2 +1,2 @@
 # my site
-under construction
+i'll finish this eventually
